@@ -20,6 +20,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I am  already on amazon page");
         pageObjects.getAmazonBasePage().clickAccountList();
         pageObjects.getAmazonBasePage().clickSignInButton();
+        logger.info("Amazon webpage is opened");
     }
 
     @When("I enter username {string}")
@@ -27,6 +28,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I enter username: " + sheetName);
         Map<String, String> excelData = excelReader.getRowDataBySheet(sheetName);
         pageObjects.getAmazonUserNamePage().enterUserName(excelData.get("UserName"));
+        logger.info("Username is entered");
     }
 
     @And("I enter password {string}")
@@ -34,6 +36,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I enter password: " + sheetName);
         Map<String, String> excelData = excelReader.getRowDataBySheet(sheetName);
         pageObjects.getAmazonPasswordPage().enterPassword(excelData.get("Password"));
+        logger.info("Password is entered");
     }
 
     @And("I click on continue button")
@@ -41,6 +44,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I click on continue button");
         waitForSeconds(2000);
         pageObjects.getAmazonUserNamePage().clickSubmitButton();
+        logger.info("Continue button is clicked");
     }
 
     @And("I click on submit button")
@@ -48,6 +52,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I click on submit button");
         waitForSeconds(2000);
         pageObjects.getAmazonPasswordPage().clickOnSubmit();
+        logger.info("Submit button is clicked");
     }
 
     @When("I am on amazon homepage")
@@ -55,6 +60,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I am on amazon homepage");
         Assertions.assertTrue(pageObjects.getAmazonHomePage().isHelloTextDisplayed());
         System.out.println("Thread: " + Thread.currentThread().getName() + " - Amazon home page is displayed");
+        logger.info("Username is on amazon homepage");
     }
 
     @And("I click on cart icon")
@@ -62,6 +68,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I click on cart icon");
         if (pageObjects.getAmazonHomePage().isCartContainerDisplayed()) {
             pageObjects.getAmazonHomePage().clickOnCartIcon();
+            logger.info("Cart icon is clicked");
         } else {
             throw new RuntimeException("Cart container is not displayed");
         }
@@ -74,5 +81,6 @@ public class AmazonStepDefinitions extends BaseStep {
         waitForPageLoad(excelData.get("Carturl"), 50);
         Assertions.assertTrue(driver.getCurrentUrl().contains(excelData.get("Carturl")));
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I have successfully landed on cart page");
+        logger.info("Username is navigated to cart page");
     }
 }
