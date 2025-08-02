@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
+import org.junit.Assert;
 
 import java.util.Map;
 
@@ -58,7 +58,7 @@ public class AmazonStepDefinitions extends BaseStep {
     @When("I am on amazon homepage")
     public void I_am_on_amazon_homepage() {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I am on amazon homepage");
-        Assertions.assertTrue(pageObjects.getAmazonHomePage().isHelloTextDisplayed());
+        Assert.assertTrue(pageObjects.getAmazonHomePage().isHelloTextDisplayed());
         System.out.println("Thread: " + Thread.currentThread().getName() + " - Amazon home page is displayed");
         logger.info("Username is on amazon homepage");
     }
@@ -79,7 +79,7 @@ public class AmazonStepDefinitions extends BaseStep {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I should be navigated to cart page: " + sheetName);
         Map<String, String> excelData = excelReader.getRowDataBySheet(sheetName);
         waitForPageLoad(excelData.get("Carturl"), 50);
-        Assertions.assertTrue(driver.getCurrentUrl().contains(excelData.get("Carturl")));
+        Assert.assertTrue(driver.getCurrentUrl().contains(excelData.get("Carturl")));
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I have successfully landed on cart page");
         logger.info("Username is navigated to cart page");
     }

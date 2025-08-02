@@ -1,4 +1,4 @@
-package AppHooks;
+package stepDefinitions;
 
 import com.tests.BaseTest;
 import io.cucumber.java.After;
@@ -10,8 +10,8 @@ public class Apphooks {
         BaseTest.getInstance().initializeMethod();
     }
 
-    @After(order =1)
+    @After(order = 1)
     public void tearDown() throws Throwable {
-     BaseTest.getInstance().quitMethod();
+        BaseTest.getInstance().quitMethod();
     }
 }
