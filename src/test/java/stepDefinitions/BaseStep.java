@@ -4,10 +4,9 @@ import POM.PageObjects;
 import com.testUtilities.DriverFactory;
 import Utilities.ExcelReader;
 import Utilities.PropertyReader;
-import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
-
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BaseStep {
     protected WebDriver driver;
@@ -21,6 +20,6 @@ public class BaseStep {
         excelReader = ExcelReader.getInstance();
         propertyReader = PropertyReader.getInstance();
         pageObjects = new PageObjects(this.driver);
-        logger = (Logger) LogManager.getLogger(BaseStep.class);
+        logger = LogManager.getLogger(BaseStep.class);
     }
 }
