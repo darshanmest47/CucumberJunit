@@ -28,7 +28,7 @@ public class DriverFactory {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 // You can add more options here if needed
-                chromeOptions.addArguments("--headless");
+//                chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--start-maximized");
                 driver = new ChromeDriver(chromeOptions);
                 break;
@@ -45,7 +45,7 @@ public class DriverFactory {
                 // You can add more options here if needed
                 EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.addArguments("--force-dark-mode");
-                edgeOptions.addArguments("--headless");
+//                edgeOptions.addArguments("--headless");
                 driver = new EdgeDriver(edgeOptions);
                 break;
 
