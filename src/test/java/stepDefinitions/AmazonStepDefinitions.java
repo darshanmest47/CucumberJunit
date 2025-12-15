@@ -18,7 +18,7 @@ public class AmazonStepDefinitions extends BaseStep {
     @Given("I have already opened amazon")
     public void I_have_already_opened_amazon() {
         System.out.println("Thread: " + Thread.currentThread().getName() + " - I am  already on amazon page");
-        pageObjects.getAmazonBasePage().clickAccountList();
+        pageObjects.getAmazonBasePage().clickAccountList();  
         pageObjects.getAmazonBasePage().clickSignInButton();
         logger.info("Amazon webpage is opened");
     }
