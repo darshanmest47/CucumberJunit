@@ -37,7 +37,7 @@ public class DriverFactory {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 // You can add more options here if needed
                 firefoxOptions.addArguments("--force-dark-mode");
-                firefoxOptions.addArguments("--headless");
+                //firefoxOptions.addArguments("--headless");
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
 
