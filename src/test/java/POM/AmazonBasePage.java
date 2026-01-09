@@ -19,7 +19,7 @@ public class AmazonBasePage extends BasePage {
 
     /*Example of Encapsulation*/
 
-    @FindBy(css = "#nav-link-accountList >a")
+    @FindBy(css = "#nav-link-accountList > a")
     private WebElement accountList;
 
     @FindBy(xpath = "//span[text()='Sign in']")
