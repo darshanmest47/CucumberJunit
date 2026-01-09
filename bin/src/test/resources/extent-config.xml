@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>dark</theme>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+        <documentTitle>Cucumber BDD Automation Report</documentTitle>
+        <reportName>Test Results - Build #1</reportName>
+        <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+        <css>
+            <![CDATA[
+                /* Add your custom CSS here if needed */
+                .repo-name { font-size: 1.2em; }
+            ]]>
+        </css>
+        <js>
+            <![CDATA[
+                /* Add your custom JS here if needed */
+                $(document).ready(function() {
+                    $('.logo-content').html('Your Company Name');
+                });
+            ]]>
+        </js>
+    </configuration>
+</extentreports>

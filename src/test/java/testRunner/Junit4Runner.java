@@ -1,10 +1,10 @@
 package testRunner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.testng.annotations.DataProvider;
 
-@RunWith(Cucumber.class)
+
 @CucumberOptions(
         features = "src/test/resources/features", // Path to your feature files
         glue = "stepDefinitions",                // Package where your step definitions are located
@@ -16,8 +16,12 @@ import io.cucumber.junit.CucumberOptions;
         },
         snippets = CucumberOptions.SnippetType.CAMELCASE // For camelCase snippets
 )
-public class Junit4Runner {
-
+public class Junit4Runner extends AbstractTestNGCucumberTests{
+	@Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 
 
 }
