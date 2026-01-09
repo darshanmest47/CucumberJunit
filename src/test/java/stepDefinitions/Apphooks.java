@@ -26,6 +26,7 @@ public class Apphooks {
         	if(folder.exists()) {
         		FileUtils.deleteDirectory(folder);
         	}else {
+        		folder.mkdirs();
         		WebDriver driver = DriverFactory.getDriver();
         		TakesScreenshot ts = ((TakesScreenshot)driver);
         		File src = ts.getScreenshotAs(OutputType.FILE);
